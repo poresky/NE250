@@ -38,6 +38,52 @@ essentially all $^{238}U$, whereas the plutonium contains the following isotopes
 $^{240}Pu~(21.8~wt\%)$, $^{241}Pu~(5.8~wt\%)$, and $^{242}Pu~(2.7~wt\%)$. Calculate the number of atoms of
 each isotope per gram of the fuel.
 
+\hrulefill
+
+We start by tabulating atomic masses from \textit{atom.kaeri.re.kr}:
+\begin{itemize}
+\item $m(^{238}U) = 238.050788423~u$
+\item $m(^{239}Pu) = 239.052163591~u$
+\item $m(^{240}Pu) = 240.05381375~u$
+\item $m(^{241}Pu) = 241.056851661~u$
+\item $m(^{242}Pu) = 242.058742809~u$
+\item $m(^{16}O) = 15.99491461957~u$
+\end{itemize}
+
+Assuming $1~g$ of fuel, we know that $UO_{2}$ is $70~wt\%$ of the fuel, so we say it has a mass of $0.7~g$. $1~mole$ of $UO_{2}$ is $238.05 + 2(15.99) = 270.04~g$. We therefore have $\frac{0.7~g}{270.04~g} = 0.00259~moles~UO_{2}$. Then,
+
+$$0.00259~moles~UO_{2} \times \frac{6.022 \times 10^{23}~atoms}{mole} = \mathbf{1.56 \times 10^{21}~atoms~^{238}U~per~gram~of~fuel}.$$
+
+Moving on, we know that $PuO_{2}$ is $30~wt\%$ of the fuel, so we say it has a mass of $0.3~g$. In order to calculate the molar mass of $Pu$ in this mixture, we find the sum of the ratio of each weight percentage divided by each isotope's molar mass:
+
+$$\frac{1}{M(Pu)} = \sum_{i} \frac{w_{i}}{M_{i}}$$
+
+and we calculate that $M(Pu) = 239.465800990855~u$. Then, we know that the mass of 1 mole of $PuO_{2}$ is $239.47 + 2(15.99) = 271.4556~u$. We therefore have $\frac{0.3~g}{271.46~g} = 0.00111~moles~PuO_{2}$. We then have
+
+$$0.00111~moles~Pu \times 239.4658~g/mol = 0.2646~g~Pu$$
+
+Since we know the weight percentages, we can calculate our mass for each isotope of Pu:
+
+\begin{itemize}
+\item $m(^{239}Pu) =  0.2646~g \times 0.697 = 0.1844~g$
+\item $m(^{240}Pu) =  0.2646~g \times 0.218 = 0.05769~g$
+\item $m(^{241}Pu) =  0.2646~g \times 0.058 = 0.01535~g$
+\item $m(^{242}Pu) =  0.2646~g \times 0.027 = 0.007145~g$
+\end{itemize}
+
+and we calculate our atoms per gram as
+
+\begin{itemize}
+\item $N(^{239}Pu) =  \frac{0.1844~g}{239.052163591~g/mol}\times \frac{6.022 \times 10^{23}~atoms}{mole} = \mathbf{4.65 \times 10^{20}~atoms~^{239}Pu/g~fuel}$
+\item $m(^{240}Pu) =  \frac{0.05769~g}{240.05381375~g/mol}\times \frac{6.022 \times 10^{23}~atoms}{mole} = \mathbf{1.45\times 10^{20}~atoms~^{240}Pu/g~fuel}$
+\item $m(^{241}Pu) =  \frac{0.01535~g}{241.056851661~g/mol}\times \frac{6.022 \times 10^{23}~atoms}{mole} = \mathbf{3.83\times 10^{19}~atoms~^{241}Pu/g~fuel}$
+\item $m(^{242}Pu) =  \frac{0.007145~g}{242.058742809~g/mol}\times \frac{6.022 \times 10^{23}~atoms}{mole} = \mathbf{1.78\times 10^{19}~atoms~^{242}Pu/g~fuel}$
+\end{itemize}
+
+and, finally, we have $1.56 \times 10^{21} + 0.00111~moles~O_{2} \times \frac{6.022 \times 10^{23}~atoms}{mole} = \mathbf{2.23 \times 10^{21}~molecules~O_{2}~per~gram~of~fuel}$.
+
+\hrulefill
+
 \section*{Problem 2}
 
 Determine the mean free path of neutrons for the following energies and materials:
@@ -74,6 +120,29 @@ with a 50$\%$ efficiency for the 54-min In-116m activity. What is the probabilit
 these radioactive In-116m nuclei will remain in the foil at 2:00 p.m. Thursday, the same week?
 Note: $ln (1- x) \simeq x $ when $ x \ll 1$.
 
+\hrulefill
+
+
+Because the counter has a 50$\%$ efficiency, we use a total count of
+
+$$\frac{346,573~CPM}{50\%} = 693,146~CPM$$
+
+which is the number of Beta-minus decays per minute, or the activity. Activity is equal to
+
+$$\mathit{A} = \frac{ln2}{t_{1/2}}N$$
+
+where $\frac{ln2}{t_{1/2}} = \lambda = 0.012836058899258~min^{-1}$ for a half-life of 54 minutes. Solving for $N$, there are approximately $5.40 \times 10^{7}$ nuclei of In-116m at 4:00 p.m. on Tuesday. The time that will elapse between 4:00 p.m. Tuesday and 2:00 p.m. Thursday is 46 hours or 2760 minutes. From Duderstadt and Hamilton p. 13, the probability that a given nucleus will decay in a time interval $t$ to $t + dt$ is
+
+$$p(t)dt = \lambda e^{-\lambda t} dt$$
+
+and we are looking for the probability that these nuclei decay within the time interval so we must integrate over the interval, taking our starting time as $t = 0$:
+
+$$\int_{0}^{2760~min} p(t) dt = \lambda \int_{0}^{2760~min} e^{- \lambda t} dt$$
+
+which gives a probability of essentially $1$ that any given In-116m nucleus will decay in this interval. However, because the probability is \textit{not quite} $1$, we can carry our calculation forward. We then set this probability to the power of the number of nuclei to find the probability that\textit{all} of these nuclei decay and arrive at our answer of \boxed{0.999999976019183}. (All calculations in MATLAB)
+
+\hrulefill
+
 
 \section*{Problem 7}
 
@@ -81,9 +150,55 @@ Compute and plot the parameter $\eta$ for uranium as a function of its enrichmen
 thermal neutron energies. Which is the minimum theoretical enrichment value required for
 criticality? And which for breeding?
 
+\hrulefill
+
+$\eta$ is the neutron reproduction factor and it is defined as the average number of neutrons produced per neutron absorbed in the fuel. For a mixture of isotopes, it is defined as (Duderstadt and Hamilton p.68):
+
+$$\eta = \frac{\sum_{j} \nu_{j}\Sigma_{f}^{j}}{\sum_{j} \Sigma_{a}^{j}}$$
+
+where, for uranium fuel, we neglect $^{234}U$ and assume it consists of $^{235}U$ and $^{238}U$ alone. For our case, we assume we have a uniform average neutrons per fission of $2.4$ and have the following equation:
+
+$$\eta = \frac{\nu (\Sigma_{f}^{235} + \Sigma_{f}^{238})}{\Sigma_{a}^{235} + \Sigma_{a}^{238}}$$
+
+and macroscopic cross section, $\Sigma = \sigma N$. Using \textit{atom.kaeri.re.kr} and ENDF/B-VII.1 for cross-section data, at thermal energies, we have:
+
+$$\sigma_{f}^{238} = 1.67946 \times 10^{-5}~b~,~\sigma_{\gamma}^{238} = 2.68261~b~,~\sigma_{f}^{235} = 585.086~b~,~\sigma_{\gamma}^{235} = 98.6864~b$$
+
+Then, because absorption includes both fission and absorption, we can write our equation:
+
+$$\eta = \frac{\nu (N^{235}\sigma_{f}^{235} + N^{238}\sigma_{f}^{238})}{N^{235}(\sigma_{f}^{235} + \sigma_{\gamma}^{235}) + N^{238}(\sigma_{f}^{238} + \sigma_{\gamma}^{238})}$$
+
+Here, because $N^{238}$ and $N^{235}$ will each be some fraction of a total $N$, we can use these fractions in place of actual numbers of nuclei. We then have the constraint that they will add to $1$. Plugging this information into MATLAB, we can generate the desired plot:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{P7.png}
+    \caption{$\eta$ as a function of uranium enrichment at thermal neutron energies}
+\end{figure}
+
+Using the data in MATLAB that is illustrated on this plot, we find that the minimum enrichment for criticality, where $\eta \geq 1$, is \boxed{at\%~ ^{235}U = 0.38 \%} and the minimum enrichment for breeding, where $\eta > 2$, is \boxed{at\%~^{235}U = 12.77 \%}.
+
+\hrulefill
+
 \section*{Problem 8}
 
 What is the maximum theoretical value for the multiplication factor in any system? Explain.
+
+\hrulefill
+
+Because the multiplication factor, $k$, is defined as
+
+$$k = \frac{neutrons~in~next~generation}{neutrons~in~this~generation}$$
+
+we know that our numerator is some multiplication of our denominator. The maximum number of neutrons that we can have available in the next generation is the number of neutrons from fission, $\nu$. Therefore, in the ideal case,
+
+$$k = \frac{\nu N}{N}$$
+
+which means, for any system,
+
+$$\boxed{k_{max} = \nu}$$
+
+\hrulefill
 
 \section*{Problem 9}
 
