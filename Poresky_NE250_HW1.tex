@@ -2,6 +2,7 @@
 \usepackage[version=3]{mhchem}
 \usepackage[english]{}
 \usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amsmath}
@@ -31,29 +32,108 @@
 \maketitle
 \section*{Problem 1}
 
+The fuel for a certain breeder reactor consists of pellets composed of mixed oxides, $UO_{2}$ and
+$PuO_{2}$, with the $PuO_{2}$ comprising approximately 30 weight$~\%$ of the mixture. The uranium is
+essentially all $^{238}U$, whereas the plutonium contains the following isotopes: $^{239}Pu~(69.7~wt\%)$,
+$^{240}Pu~(21.8~wt\%)$, $^{241}Pu~(5.8~wt\%)$, and $^{242}Pu~(2.7~wt\%)$. Calculate the number of atoms of
+each isotope per gram of the fuel.
+
 \section*{Problem 2}
+
+Determine the mean free path of neutrons for the following energies and materials:
+
+\begin{enumerate}[label=(\alph*)]
+\item 14 MeV neutrons in air, water, and uranium—typical of fusion reactors;
+\item 1 MeV neutrons in air, water, and uranium—typical of fast reactors;
+\item 0.05 eV neutrons in air, water, and uranium—typical of thermal reactors.
+\end{enumerate}
+
+Use STP for densities of the materials.
 
 \section*{Problem 3}
 
+Plot the fission and capture cross sections of $^{235}U$, $^{238}U$, and $^{239}Pu$. Rank these isotopes in
+terms of their capture-to-fission cross section ratio at 0.0253 eV and at 0.73 MeV (the most
+probable energy of fission neutrons).
+
 \section*{Problem 4}
+
+Boron and gadolinium are used as neutron absorber in LWRs (Light Water Reactors). By
+means of which reaction they absorb neutrons? Plot the corresponding cross sections. Which
+of their isotopes is the most absorbing at 0.0253 eV?
 
 \section*{Problem 5}
 
+Determine the fission-rate density necessary to produce a thermal power density of 400 kW/liter
+(typical of a fast breeder reactor core). Assume that the principal fissile isotope is $^{239}Pu$.
+
 \section*{Problem 6}
+
+An indium foil is counted at 4:00 p.m. Tuesday and found to yield 346,573 CPM in a counter
+with a 50$\%$ efficiency for the 54-min In-116m activity. What is the probability that none of
+these radioactive In-116m nuclei will remain in the foil at 2:00 p.m. Thursday, the same week?
+Note: $ln (1- x) \simeq x $ when $ x \ll 1$.
+
 
 \section*{Problem 7}
 
+Compute and plot the parameter $\eta$ for uranium as a function of its enrichment in $^{235}U$ at
+thermal neutron energies. Which is the minimum theoretical enrichment value required for
+criticality? And which for breeding?
+
 \section*{Problem 8}
+
+What is the maximum theoretical value for the multiplication factor in any system? Explain.
 
 \section*{Problem 9}
 
+A spherical reactor composed of $^{235}U$ metal is operating in a critical steady state. Discuss
+what probably happens to the multiplication of the reactor and why, if the system is modified
+in the following ways (treat each modification separately, not cumulatively):
+\begin{enumerate}[label=(\alph*)]
+\item the reactor is rapidly compressed to one-half its original volume;
+\item the reactor is squashed into an ellipsoidal shape;
+\item a thick sheet of cadmium is wrapped around the outside of the reactor;
+\item the reactor is suddenly immersed in a large container of water;
+\item a source of neutrons is placed near the reactor;
+\item another identical reactor is placed a short distance from the original reactor;
+\item one simply leaves the reactor alone for a period of time.
+\end{enumerate}
+
 \section*{Problem 10}
+
+What are the underlying assumptions in the neutron transport equation? Provide at least five.
 
 \section*{Problem 11}
 
+An interesting model of neutron transport involves transport in a one-dimensional rod. This
+means neutrons can move only to the left and or to the right. The angular density of the
+neutrons moving to the left and to the right are indicated as $n_{-}(x,E,t)$ and $n_{+}(x,E,t)$,
+respectively. One need only to consider forward $\Sigma^{+}_{s}
+(E' \rightarrow E)$ or backward $\Sigma^{-}_{s}(E' \rightarrow E)$ scattering events.
+
+\begin{enumerate}[label=(\alph*)]
+\item Derive the transport equation for $n_{-}(x,E, t)$ and $n_{+}(x,E,t)$.
+\item Make the one-speed approximation, assuming cross sections are energy independent and
+in particular $\Sigma^{\pm}_{s}(E' \rightarrow E) = \Sigma^{\pm}_{s} \delta (E' \rightarrow E)$.
+\item Describe the boundary and initial conditions necessary to complete the problem specification
+assuming the rod length is $L$.
+\end{enumerate}
+
 \section*{Problem 12}
+
+Suppose the angular flux in a slab geometry is given by
+$$\phi(z,\mu) = \phi_{0}(cosBz + A\mu sinBz)$$
+where $\mu = cos\theta$, and $\theta$ measures the angular deviation form the $z$ axis.
+(a) Find $\phi(z)$ and $J(z)$.
+(b) Rewrite $\phi(z,\mu)$ as a function of $\phi(z)$ and $J(z)$ by eliminating $A$.
+(c) Find partial current $J^{+}$ and $J^{-}$ in the upper and lower half of the solid angle.
+(d) Check the results for $J^{+}$ and $J^{-}$, comparing them with $J$.
 
 \section*{Problem 13}
 
+Show that in diffusion theory positive/negative partial current through a surface $S$ is given by
+the following $(\forall \vec{r} \epsilon S)$:
+$$J_{\pm}(\vec{r},t) \simeq \frac{1}{4}\phi(\vec{r},t) \mp \frac{D(\vec{r})}{2}\hat{e}_{s}(\vec{r}) \cdot \nabla \phi(\vec{r},t) $$
 
 \end{document}
